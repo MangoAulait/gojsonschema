@@ -1,4 +1,4 @@
-module github.com/xeipuuv/gojsonschema
+module github.com/mangoaulait/gojsonschema
 
 go 1.15
 
