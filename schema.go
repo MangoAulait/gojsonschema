@@ -399,6 +399,9 @@ func (d *Schema) parseSchema(documentNode interface{}, currentSchema *subSchema)
 				}
 				currentSchema.itemsChildrenIsSingleSchema = false
 			}
+			if len(m[KEY_ITEMS].([]interface{})) == 1 {
+				currentSchema.itemsChildrenIsSingleSchema = true
+			}
 		} else if isKind(m[KEY_ITEMS], reflect.Map, reflect.Bool) {
 			newSchema := &subSchema{parent: currentSchema, property: KEY_ITEMS}
 			newSchema.ref = currentSchema.ref
